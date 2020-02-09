@@ -78,5 +78,11 @@ namespace Pulsometer
             // Close the application
             Tizen.Applications.Application.Current.Exit();
         }
+
+        private void OnMonitorDataUpdated(object sender, HeartRateMonitorDataUpdatedEventArgs e)
+        {
+            // Update displayed value
+            hrValue.Text = e.HeartRate > 0 ? e.HeartRate.ToString() : "0";
+        }
     }
 }
