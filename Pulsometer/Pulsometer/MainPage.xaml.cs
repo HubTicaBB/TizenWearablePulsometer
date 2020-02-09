@@ -84,5 +84,27 @@ namespace Pulsometer
             // Update displayed value
             hrValue.Text = e.HeartRate > 0 ? e.HeartRate.ToString() : "0";
         }
+
+        private void StartMeasurement()
+        {
+            monitor.DataUpdated += OnMonitorDataUpdated;
+            monitor.Start();
+            measuring = true;
+
+            // Update the view
+            actionButton.Text = "STOP";
+            measuringIndicator.IsVisible = true;
+        }
+
+        private void StopMeasurement()
+        {
+            monitor.DataUpdated -= OnMonitorDataUpdated;
+            monitor.Stop();
+            measuring = false;
+
+            // Update the view
+            actionButton.Text = "MEASURE";
+            measuringIndicator.IsVisible = false;
+        }
     }
 }
