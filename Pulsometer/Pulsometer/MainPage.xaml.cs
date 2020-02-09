@@ -67,7 +67,10 @@ namespace Pulsometer
 
         private void OnPrivilegesGranted()
         {
-
+            // Create an instance of the monitor
+            monitor = new HeartRateMonitor();
+            // specify frequency of the sensor data event by setting the interval value (in milliseconds)
+            monitor.Interval = 1000;
         }
 
         private void OnPrivilegesDenied()
