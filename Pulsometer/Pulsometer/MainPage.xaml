@@ -26,4 +26,11 @@
                    Text="0" />
         </AbsoluteLayout>
     </cui:CirclePage.Content>
+
+    <cui:CirclePage.ActionButton>
+        <cui:ActionButtonItem x:Name="actionButton"
+                              Text="MEASURE"
+                              Clicked ="OnActionButtonClicked" />
+    </cui:CirclePage.ActionButton>
+    
 </cui:CirclePage>
