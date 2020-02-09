@@ -1,15 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns="http://tizen.org/ns/packages" api-version="4" package="org.tizen.example.Pulsometer" version="1.0.0">
-	<profile name="wearable" />
-	<ui-application appid="org.tizen.example.Pulsometer"
-					exec="Pulsometer.dll"
-					type="dotnet"
-					multiple="false"
-					taskmanage="true"
-					nodisplay="false"
-					launch_mode="single">
-  <label>Pulsometer</label>
-	<icon>Pulsometer.png</icon>
+<manifest package="org.tizen.example.Pulsometer" version="1.0.0" api-version="4" xmlns="http://tizen.org/ns/packages">
+    <profile name="wearable" />
+    <ui-application appid="org.tizen.example.Pulsometer" exec="Pulsometer.dll" multiple="false" nodisplay="false" taskmanage="true" type="dotnet" launch_mode="single">
+        <label>Pulsometer</label>
+        <icon>Pulsometer.png</icon>
         <metadata key="http://tizen.org/metadata/prefer_dotnet_aot" value="true" />
-	</ui-application>
+        <splash-screens />
+    </ui-application>
+    <shortcut-list />
+    <privileges>
+        <privilege>http://tizen.org/privilege/healthinfo</privilege>
+    </privileges>
+    <dependencies />
+    <provides-appdefined-privileges />
 </manifest>
