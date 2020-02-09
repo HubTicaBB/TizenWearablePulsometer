@@ -4,14 +4,26 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:cui="clr-namespace:Tizen.Wearable.CircularUI.Forms;assembly=Tizen.Wearable.CircularUI.Forms"
-             xmlns
-             mc:Ignorable="d"
              x:Class="Pulsometer.MainPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <cui:CirclePage.Content>
+        <AbsoluteLayout>
+            <Image AbsoluteLayout.LayoutFlags="All"
+                   AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+                   Source="Background.png" />
+
+            <Image x:Name="measuringIndicator" 
+                   AbsoluteLayout.LayoutFlags="None"
+                   AbsoluteLayout.LayoutBounds="155, 64, 50, 44"
+                   Source="Heart.png"
+                   IsVisible="False" />
+
+            <Label x:Name="hrValue"
+                   TextColor="#454545"
+                   FontSize="20"
+                   AbsoluteLayout.LayoutFlags="None"
+                   AbsoluteLayout.LayoutBounds="127, 169, 104, 48"
+                   HorizontalTextAlignment="Center"
+                   Text="0" />
+        </AbsoluteLayout>
+    </cui:CirclePage.Content>
 </cui:CirclePage>
