@@ -78,6 +78,15 @@ namespace Pulsometer
             monitor = new HeartRateMonitor();
             // specify frequency of the sensor data event by setting the interval value (in milliseconds)
             monitor.Interval = 1000;
+
+            // stop the measurement when the application goes background
+            MessagingCenter.Subscribe<Application>(this, "sleep", (sender) =>
+            {
+                if (measuring)
+                {
+                    StopMeasurement();
+                }
+            });
         }
 
         private void OnPrivilegesDenied()
