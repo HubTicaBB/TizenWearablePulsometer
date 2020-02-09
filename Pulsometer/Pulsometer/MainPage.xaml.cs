@@ -68,7 +68,8 @@ namespace Pulsometer
 
         private void OnPrivilegesDenied()
         {
-
+            // Close the application
+            Tizen.Applications.Application.Current.Exit();
         }
     }
 }
