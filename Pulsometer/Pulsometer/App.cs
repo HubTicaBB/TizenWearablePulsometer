@@ -25,6 +25,7 @@ namespace Pulsometer
         protected override void OnSleep()
         {
             // Handle when your app sleeps
+            MessagingCenter.Send<Application>(this, "sleep");
         }
 
         protected override void OnResume()
