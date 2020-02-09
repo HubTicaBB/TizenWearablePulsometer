@@ -27,7 +27,14 @@ namespace Pulsometer
         
         private void OnActionButtonClicked(object sender, EventArgs e)
         {
-
+            if (measuring)
+            {
+                StopMeasurement();
+            }
+            else
+            {
+                StartMeasurement();
+            }
         }
 
         private void CheckPrivileges()
