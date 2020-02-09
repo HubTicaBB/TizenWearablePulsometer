@@ -9,12 +9,16 @@ using Xamarin.Forms.Xaml;
 
 using Tizen.Wearable.CircularUI.Forms;
 using Tizen.Security;
+using Tizen.Sensor;
 
 namespace Pulsometer
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : CirclePage
     {
+        private HeartRateMonitor monitor;
+        private bool measuring = false;
+
         public MainPage()
         {
             InitializeComponent();
